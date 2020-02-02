@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_model.view.*
 
-class ModelsAdapter: RecyclerView.Adapter<ModelsAdapter.ViewHolder>() {
+class ModelsAdapter(private val activity: MainActivity):
+    RecyclerView.Adapter<ModelsAdapter.ViewHolder>() {
 
     // List of model names (key)
     val items = arrayListOf<String>()
@@ -35,6 +36,10 @@ class ModelsAdapter: RecyclerView.Adapter<ModelsAdapter.ViewHolder>() {
             .load(previewImageUri)
             .centerCrop()
             .into(holder.preview)
+
+        holder.itemView.setOnClickListener {
+            activity.selectModel(items[position])
+        }
 
         @SuppressLint("DefaultLocale")
         holder.name.text = items[position].capitalize()
