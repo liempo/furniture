@@ -1,0 +1,105 @@
+{
+  materials: [
+    {
+      name: 'material_0',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'material_0_diffuse',
+        },
+        {
+          normal: 'material_0_normal',
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.032203000000000002,
+            0.032203000000000002,
+            0.032203000000000002,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'material_0_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/bed/scene.gltf',
+    name: 'scene',
+    recenter: 'root',
+    scale: 0.086123000000000005,
+  },
+  samplers: [
+    {
+      file: 'sampledata/bed/textures/material_0_diffuse.png',
+      name: 'material_0_diffuse',
+      pipeline_name: 'textures/material_0_diffuse.png',
+    },
+    {
+      file: 'sampledata/bed/textures/material_0_specularGlossiness.png',
+      name: 'material_0_specularGlossiness',
+      pipeline_name: 'textures/material_0_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/bed/textures/material_0_normal.png',
+      name: 'material_0_normal',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'textures/material_0_normal.png',
+    },
+  ],
+  version: '0.54:2',
+}

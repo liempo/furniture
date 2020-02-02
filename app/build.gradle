@@ -39,3 +39,13 @@ dependencies {
     // ARCore sceneform
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.14.0'
 }
+
+sceneform.asset('sampledata/bed/scene.gltf',
+        'default',
+        'sampledata/bed/scene.sfa',
+        'src/main/assets/bed')
+
+sceneform.asset('sampledata/sofa/scene.gltf',
+        'default',
+        'sampledata/sofa/scene.sfa',
+        'src/main/assets/sofa')
