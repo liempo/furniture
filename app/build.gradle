@@ -55,3 +55,8 @@ sceneform.asset('sampledata/sofa/scene.gltf',
         'default',
         'sampledata/sofa/scene.sfa',
         'src/main/assets/sofa')
+
+sceneform.asset('sampledata/table/scene.gltf',
+        'default',
+        'sampledata/table/scene.sfa',
+        'src/main/assets/table')

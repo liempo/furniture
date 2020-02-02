@@ -1,0 +1,296 @@
+{
+  materials: [
+    {
+      name: 'pasted__buttonsmat1',
+      parameters: [
+        {
+          baseColorFactor: [
+            0.022904000000000001,
+            0.014551,
+            0.014551,
+            1,
+          ],
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: 0.59927600000000003,
+        },
+        {
+          roughnessFactor: 0.37976399999999999,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'pasted__sofalegsShape_bakedmtl2',
+      parameters: [
+        {
+          baseColorFactor: [
+            0.027607,
+            0.007437,
+            0.007437,
+            1,
+          ],
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: 0,
+        },
+        {
+          roughnessFactor: 0.81269100000000005,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: 'pasted__sofalegsShape_bakedmtl2_metallicRoughness',
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'pasted__coopermat1',
+      parameters: [
+        {
+          baseColorFactor: [
+            0.134737,
+            0.050486000000000003,
+            0.0089189999999999998,
+            1,
+          ],
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: 0.72122699999999995,
+        },
+        {
+          roughnessFactor: 0.14805599999999999,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'pasted__sofabody2Shape_bakedmtl2',
+      parameters: [
+        {
+          baseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColor: 'pasted__sofabody2Shape_bakedmtl2_baseColor',
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: 0.38586100000000001,
+        },
+        {
+          roughnessFactor: 0.48952000000000001,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: 'pasted__sofabody2Shape_bakedmtl2_metallicRoughness',
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/sofa/scene.gltf',
+    name: 'scene',
+    recenter: 'root',
+    scale: 0.002679,
+  },
+  samplers: [
+    {
+      file: 'sampledata/sofa/textures/pasted__sofabody2Shape_bakedmtl2_baseColor.png',
+      name: 'pasted__sofabody2Shape_bakedmtl2_baseColor',
+      pipeline_name: 'textures/pasted__sofabody2Shape_bakedmtl2_baseColor.png',
+    },
+    {
+      file: 'sampledata/sofa/textures/pasted__sofabody2Shape_bakedmtl2_metallicRoughness.png',
+      name: 'pasted__sofabody2Shape_bakedmtl2_metallicRoughness',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'textures/pasted__sofabody2Shape_bakedmtl2_metallicRoughness.png',
+    },
+    {
+      file: 'sampledata/sofa/textures/pasted__sofalegsShape_bakedmtl2_metallicRoughness.png',
+      name: 'pasted__sofalegsShape_bakedmtl2_metallicRoughness',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'textures/pasted__sofalegsShape_bakedmtl2_metallicRoughness.png',
+    },
+  ],
+  version: '0.54:2',
+}
