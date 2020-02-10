@@ -45,23 +45,3 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
-
-sceneform.asset('sampledata/Living Room/Coffee Table/scene.gltf',
-        'default',
-        'sampledata/Living Room/Coffee Table/scene.sfa',
-        'src/main/assets/models/coffee_table')
-
-sceneform.asset('sampledata/Living Room/Couch/scene.gltf',
-        'default',
-        'sampledata/Living Room/Coffee Table/scene.sfa',
-        'src/main/assets/models/couch')
-
-sceneform.asset('sampledata/Living Room/Leather/scene.gltf',
-        'default',
-        'sampledata/Living Room/Coffee Table/scene.sfa',
-        'src/main/assets/models/leather')
-
-sceneform.asset('sampledata/Living Room/Sofa/scene.gltf',
-        'default',
-        'sampledata/Living Room/Coffee Table/scene.sfa',
-        'src/main/assets/models/sofa')
