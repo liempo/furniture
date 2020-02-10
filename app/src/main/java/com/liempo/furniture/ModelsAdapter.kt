@@ -43,5 +43,6 @@ class ModelsAdapter(private val activity: MainActivity):
 
         @SuppressLint("DefaultLocale")
         holder.name.text = items[position].capitalize()
+            .replace("_", " ")
     }
 }
