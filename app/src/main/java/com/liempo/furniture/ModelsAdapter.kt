@@ -30,7 +30,7 @@ class ModelsAdapter(private val activity: MainActivity):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val previewImageUri = Uri.parse(
-            "file:///android_asset/${items[position]}.png")
+            "file:///android_asset/previews/${items[position]}.png")
 
         Glide.with(holder.preview)
             .load(previewImageUri)

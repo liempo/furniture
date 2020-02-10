@@ -35,28 +35,33 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     // ARCore sceneform
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.14.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
 
-sceneform.asset('sampledata/bed/scene.gltf',
+sceneform.asset('sampledata/Living Room/Coffee Table/scene.gltf',
         'default',
-        'sampledata/bed/scene.sfa',
-        'src/main/assets/bed')
+        'sampledata/Living Room/Coffee Table/scene.sfa',
+        'src/main/assets/models/coffee_table')
 
-sceneform.asset('sampledata/sofa/scene.gltf',
+sceneform.asset('sampledata/Living Room/Couch/scene.gltf',
         'default',
-        'sampledata/sofa/scene.sfa',
-        'src/main/assets/sofa')
+        'sampledata/Living Room/Coffee Table/scene.sfa',
+        'src/main/assets/models/couch')
 
-sceneform.asset('sampledata/table/scene.gltf',
+sceneform.asset('sampledata/Living Room/Leather/scene.gltf',
         'default',
-        'sampledata/table/scene.sfa',
-        'src/main/assets/table')
+        'sampledata/Living Room/Coffee Table/scene.sfa',
+        'src/main/assets/models/leather')
+
+sceneform.asset('sampledata/Living Room/Sofa/scene.gltf',
+        'default',
+        'sampledata/Living Room/Coffee Table/scene.sfa',
+        'src/main/assets/models/sofa')

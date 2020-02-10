@@ -5,11 +5,10 @@ import android.content.Context
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_COLLAPSED
-import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_EXPANDED
+import com.google.android.material.bottomsheet.BottomSheetBehavior.*
 import com.google.ar.core.ArCoreApk
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.rendering.ModelRenderable
@@ -23,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val models =
         hashMapOf<String, ModelRenderable>()
     private var selected: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Timber.plant(Timber.DebugTree())
@@ -69,6 +69,33 @@ class MainActivity : AppCompatActivity() {
                 scaleController.maxScale = 1.0f
             }
         }
+
+        val sheetBehavior = from(sheet)
+        sheetBehavior.addBottomSheetCallback(object : BottomSheetCallback() {
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {}
+
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                when (newState) {
+                    STATE_HIDDEN -> {}
+                    STATE_EXPANDED -> {
+                        sheet_icon.setImageResource(
+                            R.drawable.ic_keyboard_arrow_down_black_24dp)
+                    }
+                    STATE_COLLAPSED -> {
+                        sheet_icon.setImageResource(
+                            R.drawable.ic_keyboard_arrow_up_black_24dp)
+                    }
+                    STATE_DRAGGING -> {}
+                    STATE_SETTLING -> {}
+                    STATE_HALF_EXPANDED -> {}
+                }
+            }
+
+        })
+
+
+        sheet_icon.setOnClickListener { toggleSheet() }
     }
 
     internal fun selectModel(key: String) {
@@ -76,7 +103,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun toggleSheet() {
-        val behavior = BottomSheetBehavior.from(sheet)
+        val behavior = from(sheet)
 
         if (behavior.state != STATE_EXPANDED)
             behavior.state = STATE_EXPANDED
@@ -85,15 +112,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buildModelsFromAssets() {
-        for (filename in assets.list("")!!) {
+        for (filename in assets.list("models")!!) {
             if (!filename.contains(".sfb"))
                 continue
-
             val key = filename.replace(
                 ".sfb", "")
             ModelRenderable.builder()
                 .setSource(this,
-                    Uri.parse(filename))
+                    Uri.parse("models/$filename"))
                 .build()
                 .thenAccept {
                     models[key] = it
