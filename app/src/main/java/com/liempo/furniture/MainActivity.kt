@@ -20,8 +20,8 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     private val models =
-        hashMapOf<String, ModelRenderable>()
-    private var selected: String? = null
+        hashMapOf<String, Uri>()
+    private var selected: ModelRenderable? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +41,15 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
 
-        with(models_recycler_view) {
+        with(living_room_recycler_view) {
+            layoutManager = LinearLayoutManager(
+                this@MainActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false)
+            adapter = ModelsAdapter(this@MainActivity)
+        }
+
+        with(bedroom_recycler_view) {
             layoutManager = LinearLayoutManager(
                 this@MainActivity,
                 LinearLayoutManager.HORIZONTAL,
@@ -63,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
             // Create the transformable node
             TransformableNode(ux.transformationSystem).apply {
-                setParent(node); renderable = models[selected!!]; select()
+                setParent(node); renderable = selected; select()
 
                 scaleController.minScale = 0.4f
                 scaleController.maxScale = 1.0f
@@ -99,7 +107,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     internal fun selectModel(key: String) {
-        selected = key; toggleSheet()
+        ModelRenderable.builder()
+            .setSource(this, models[key])
+
+        ModelRenderable.builder()
+            .setSource(this, models[key])
+            .build()
+            .thenAccept {
+                selected = it
+                toggleSheet()
+            }.exceptionally { error(it) }
     }
 
     private fun toggleSheet() {
@@ -112,26 +129,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buildModelsFromAssets() {
-        for (filename in assets.list("models")!!) {
-            if (!filename.contains(".sfb"))
-                continue
-            val key = filename.replace(
-                ".sfb", "")
-            ModelRenderable.builder()
-                .setSource(this,
-                    Uri.parse("models/$filename"))
-                .build()
-                .thenAccept {
-                    models[key] = it
+        for (folder in assets.list("models")!!) {
+            for (filename in assets.list("models/$folder")!!) {
+                if (!filename.contains(".sfb"))
+                    continue
+                val key = filename.replace(
+                    ".sfb", "")
+                models[key] = Uri.parse("models/$folder/$filename")
 
-                    // Add to adapter
-                    (models_recycler_view.adapter as ModelsAdapter).apply {
-                        Timber.i("Adding $key to adapter")
-                        items.add(key); notifyItemInserted(items.lastIndex)
-                    }
+                // Add to adapter
+                val adapter = when(folder) {
+                    "living_room" -> (living_room_recycler_view
+                        .adapter as ModelsAdapter)
+                    "bedroom" -> (bedroom_recycler_view
+                        .adapter as ModelsAdapter)
+                    else -> null
+                }
 
-                    Timber.d("Models loaded: ${models.size}")
-                }.exceptionally { error(it) }
+                adapter?.apply {
+                    Timber.i("Adding $key to adapter")
+                    items.add(key); notifyItemInserted(items.lastIndex)
+                }
+            }
         }
     }
 

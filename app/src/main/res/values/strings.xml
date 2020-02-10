@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Furniture</string>
+    <string name="title_living_room">Living Room</string>
+    <string name="title_bedroom">Bedroom</string>
 </resources>
