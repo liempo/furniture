@@ -26,14 +26,14 @@ class FurnitureFragment: DialogFragment() {
                 requireContext(),
                 LinearLayoutManager.HORIZONTAL,
                 false)
-            adapter = FurnitureAdapter(activity as MainActivity)
+            adapter = FurnitureAdapter(this@FurnitureFragment)
         }
         with(bedroom_rv) {
             layoutManager = LinearLayoutManager(
                 requireContext(),
                 LinearLayoutManager.HORIZONTAL,
                 false)
-            adapter = FurnitureAdapter(activity as MainActivity)
+            adapter = FurnitureAdapter(this@FurnitureFragment)
         }
 
         buildAssetMap()

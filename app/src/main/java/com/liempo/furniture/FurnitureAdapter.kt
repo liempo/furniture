@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_furniture.view.*
 
-class FurnitureAdapter(private val activity: MainActivity):
+class FurnitureAdapter(private val fragment: DialogFragment):
     RecyclerView.Adapter<FurnitureAdapter.ViewHolder>() {
 
     // List of model names (key)
@@ -45,7 +46,9 @@ class FurnitureAdapter(private val activity: MainActivity):
             .into(holder.preview)
 
         holder.itemView.setOnClickListener {
-            activity.selectModel(item.uri)
+            (fragment.activity as MainActivity)
+                .selectModel(item.uri)
+            fragment.dismiss()
         }
 
         @SuppressLint("DefaultLocale")

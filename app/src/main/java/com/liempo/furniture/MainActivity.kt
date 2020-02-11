@@ -12,6 +12,7 @@ import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,6 +56,12 @@ class MainActivity : AppCompatActivity() {
                 scaleController.minScale = 0.2f
                 scaleController.maxScale = 1.5f
             }
+        }
+
+        // Set up dialog fragment
+        val dialog = FurnitureFragment()
+        select_fab.setOnClickListener {
+            dialog.show(supportFragmentManager, "Dialog")
         }
     }
 
