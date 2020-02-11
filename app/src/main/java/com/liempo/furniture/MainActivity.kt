@@ -59,7 +59,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Set up dialog fragment
-        val dialog = FurnitureFragment()
+        val dialog = FurnitureFragment().apply {
+            show(supportFragmentManager, "Dialog") }
         select_fab.setOnClickListener {
             dialog.show(supportFragmentManager, "Dialog")
         }
