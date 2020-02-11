@@ -40,3 +40,44 @@ dependencies {
     // ARCore sceneform
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
 }
+
+
+sceneform.asset('sampledata/bedroom/bed/scene.gltf',
+        'default',
+        'sampledata/bedroom/bed/scene.sfa',
+        'src/main/assets/models/bedroom/scene')
+
+sceneform.asset('sampledata/bedroom/bunk_bed/scene.gltf',
+        'default',
+        'sampledata/bedroom/bunk_bed/scene.sfa',
+        'src/main/assets/models/bedroom/bunk_bed')
+
+sceneform.asset('sampledata/bedroom/king/scene.gltf',
+        'default',
+        'sampledata/bedroom/king/scene.sfa',
+        'src/main/assets/models/bedroom/king')
+
+sceneform.asset('sampledata/bedroom/nightstand/scene.gltf',
+        'default',
+        'sampledata/bedroom/nightstand/scene.sfa',
+        'src/main/assets/models/bedroom/nightstand')
+
+sceneform.asset('sampledata/living_room/coffee_table/scene.gltf',
+        'default',
+        'sampledata/living_room/coffee_table/scene.sfa',
+        'src/main/assets/models/living_room/coffee_table')
+
+sceneform.asset('sampledata/living_room/couch/scene.gltf',
+        'default',
+        'sampledata/living_room/couch/scene.sfa',
+        'src/main/assets/models/living_room/couch')
+
+sceneform.asset('sampledata/living_room/leather/scene.gltf',
+        'default',
+        'sampledata/living_room/leather/scene.sfa',
+        'src/main/assets/models/living_room/leather')
+
+sceneform.asset('sampledata/living_room/sofa/scene.gltf',
+        'default',
+        'sampledata/living_room/sofa/scene.sfa',
+        'src/main/assets/models/living_room/sofa')
