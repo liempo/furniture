@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment android:name="com.google.ar.sceneform.ux.ArFragment"
+    <fragment android:name="com.liempo.furniture.CaptureArFragment"
         android:id="@+id/ux_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
