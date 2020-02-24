@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         hashMapOf<String, Uri>()
     private var selected: ModelRenderable? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         Timber.plant(Timber.DebugTree())
         super.onCreate(savedInstanceState)
@@ -50,6 +49,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         with(bedroom_recycler_view) {
+            layoutManager = LinearLayoutManager(
+                this@MainActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false)
+            adapter = ModelsAdapter(this@MainActivity)
+        }
+
+        with(appliances_recycler_view) {
             layoutManager = LinearLayoutManager(
                 this@MainActivity,
                 LinearLayoutManager.HORIZONTAL,
@@ -99,9 +106,7 @@ class MainActivity : AppCompatActivity() {
                     STATE_HALF_EXPANDED -> {}
                 }
             }
-
         })
-
 
         sheet_icon.setOnClickListener { toggleSheet() }
     }
@@ -143,6 +148,8 @@ class MainActivity : AppCompatActivity() {
                         .adapter as ModelsAdapter)
                     "bedroom" -> (bedroom_recycler_view
                         .adapter as ModelsAdapter)
+                    "appliances" -> (appliances_recycler_view.
+                            adapter as ModelsAdapter)
                     else -> null
                 }
 
