@@ -23,13 +23,12 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.util.*
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var ux: CaptureArFragment
     private var model: ModelRenderable? = null
-    private val loaded =
-        arrayListOf<AnchorNode>()
+    private val loaded = arrayListOf<AnchorNode>()
+    private var selected: AnchorNode? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +61,9 @@ class MainActivity : AppCompatActivity() {
             val node = AnchorNode(anchor).apply {
                 setParent(ux.arSceneView.scene)
                 loaded.add(this)
+                setOnTapListener { _, _ ->
+                    selected = this
+                }
             }
 
             // Create the transformable node
@@ -78,16 +80,15 @@ class MainActivity : AppCompatActivity() {
         select_fab.setOnClickListener {
             dialog.show(supportFragmentManager, "Dialog")
         }
-        reset_fab.setOnClickListener {
-            loaded.forEach {
-                ux.arSceneView.scene.removeChild(it)
-                it.apply { anchor?.detach(); setParent(null) }
-            }
 
+        delete_fab.setOnClickListener {
+            ux.arSceneView.scene.removeChild(selected)
+            selected?.apply { anchor?.detach(); setParent(null) }
             Toast.makeText(this,
-                "Scene has been reset",
+                "Item is deleted",
                 Toast.LENGTH_SHORT).show()
         }
+
         capture_fab.setOnClickListener {
             takePhoto()
         }
@@ -140,8 +141,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         }, Handler(thread.looper))
-
-
     }
 
     @Suppress("DEPRECATION")
@@ -149,8 +148,9 @@ class MainActivity : AppCompatActivity() {
         val format = SimpleDateFormat("yyyyMMddHHmmss",
             Locale.getDefault())
         val date = format.format(Date())
-        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).path +
-                File.separator + ALBUM_NAME + File.separator + date + SUFFIX
+        return Environment.getExternalStoragePublicDirectory(
+            Environment.DIRECTORY_PICTURES).path + File.separator +
+                ALBUM_NAME + File.separator + date + SUFFIX
     }
 
     private fun saveBitmapToDisk(bitmap: Bitmap, filename: String) {
