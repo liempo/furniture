@@ -30,16 +30,19 @@ class ColorFragment: DialogFragment() {
         val activity = activity as MainActivity
         original_button.setOnClickListener {
             activity.selectModel(Uri.parse(uri))
+            dismiss()
         }
 
         red_button.setOnClickListener {
             activity.selectModel(Uri.parse(uri?.
                 replace("original", "red")))
+            dismiss()
         }
 
         red_button.setOnClickListener {
             activity.selectModel(Uri.parse(uri?.
                 replace("original", "blue")))
+            dismiss()
         }
     }
 
