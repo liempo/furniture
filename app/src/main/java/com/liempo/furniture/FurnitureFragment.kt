@@ -42,12 +42,12 @@ class FurnitureFragment: DialogFragment() {
     private fun buildAssetMap() {
         activity?.assets?.let { assets ->
             assets.list(MODELS_FOLDER)?.forEach { folder ->
-                assets.list("$MODELS_FOLDER/$folder")?.forEach { file ->
+                assets.list("$MODELS_FOLDER/$folder/original")?.forEach { file ->
                     // Generate key (trim)
                     val key = file.replace(
                         ".sfb", "")
                     // Add to hash map
-                    Uri.parse("models/$folder/$file").let { uri ->
+                    Uri.parse("models/$folder/original/$file").let { uri ->
                         // Add to adapter
                         (when(folder) {
                             "living_room" -> (living_room_rv

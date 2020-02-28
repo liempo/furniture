@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var ux: CaptureArFragment
     private var model: ModelRenderable? = null
-    private val loaded = arrayListOf<AnchorNode>()
     private var selected: AnchorNode? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,10 +59,7 @@ class MainActivity : AppCompatActivity() {
             val anchor = hit.createAnchor()
             val node = AnchorNode(anchor).apply {
                 setParent(ux.arSceneView.scene)
-                loaded.add(this)
-                setOnTapListener { _, _ ->
-                    selected = this
-                }
+                selected = this
             }
 
             // Create the transformable node
