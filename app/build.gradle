@@ -8,7 +8,7 @@ apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.liempo.furniture"
         minSdkVersion 25
@@ -33,7 +33,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.google.android.material:material:1.1.0'
@@ -45,44 +45,3 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
-
-
-sceneform.asset('sampledata/bedroom/bed/scene.gltf',
-        'default',
-        'sampledata/bedroom/bed/scene.sfa',
-        'src/main/assets/models/bedroom/scene')
-
-sceneform.asset('sampledata/bedroom/bunk_bed/scene.gltf',
-        'default',
-        'sampledata/bedroom/bunk_bed/scene.sfa',
-        'src/main/assets/models/bedroom/bunk_bed')
-
-sceneform.asset('sampledata/bedroom/king/scene.gltf',
-        'default',
-        'sampledata/bedroom/king/scene.sfa',
-        'src/main/assets/models/bedroom/king')
-
-sceneform.asset('sampledata/bedroom/nightstand/scene.gltf',
-        'default',
-        'sampledata/bedroom/nightstand/scene.sfa',
-        'src/main/assets/models/bedroom/nightstand')
-
-sceneform.asset('sampledata/living_room/coffee_table/scene.gltf',
-        'default',
-        'sampledata/living_room/coffee_table/scene.sfa',
-        'src/main/assets/models/living_room/coffee_table')
-
-sceneform.asset('sampledata/living_room/couch/scene.gltf',
-        'default',
-        'sampledata/living_room/couch/scene.sfa',
-        'src/main/assets/models/living_room/couch')
-
-sceneform.asset('sampledata/living_room/leather/scene.gltf',
-        'default',
-        'sampledata/living_room/leather/scene.sfa',
-        'src/main/assets/models/living_room/leather')
-
-sceneform.asset('sampledata/living_room/sofa/scene.gltf',
-        'default',
-        'sampledata/living_room/sofa/scene.sfa',
-        'src/main/assets/models/living_room/sofa')
