@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Furniture</string>
     <string name="title_living_room">Living Room</string>
-    <string name="Bedroom">Bedroom</string>
+    <string name="title_bedroom">Bedroom</string>
+    <string name="title_color_original">Original</string>
+    <string name="title_color_red">Red</string>
+    <string name="title_color_blue">Blue</string>
+    <string name="title_appliances">Appliances</string>
 </resources>

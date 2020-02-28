@@ -35,6 +35,13 @@ class FurnitureFragment: DialogFragment() {
                 false)
             adapter = FurnitureAdapter(this@FurnitureFragment)
         }
+        with(appliances_rv) {
+            layoutManager = LinearLayoutManager(
+                requireContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false)
+            adapter = FurnitureAdapter(this@FurnitureFragment)
+        }
 
         buildAssetMap()
     }
@@ -53,6 +60,8 @@ class FurnitureFragment: DialogFragment() {
                             "living_room" -> (living_room_rv
                                 .adapter as FurnitureAdapter)
                             "bedroom" -> (bedroom_rv
+                                .adapter as FurnitureAdapter)
+                            "appliances" -> (appliances_rv
                                 .adapter as FurnitureAdapter)
                             else -> null
                         })?.addItem(key, uri)

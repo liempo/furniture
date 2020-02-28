@@ -47,7 +47,7 @@ class FurnitureAdapter(private val fragment: DialogFragment):
 
         holder.itemView.setOnClickListener {
             (fragment.activity as MainActivity)
-                .selectModel(item.uri)
+                .selectColor(item.uri)
             fragment.dismiss()
         }
 

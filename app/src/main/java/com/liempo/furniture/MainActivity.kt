@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
     private var model: ModelRenderable? = null
     private var selected: AnchorNode? = null
 
+    // Dialogs
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -71,10 +73,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Set up dialog fragment
-        val dialog = FurnitureFragment().apply {
-            show(supportFragmentManager, "Dialog") }
+        val furnitureDialog = FurnitureFragment().apply {
+            show(supportFragmentManager, "FurnitureDialog") }
+
         select_fab.setOnClickListener {
-            dialog.show(supportFragmentManager, "Dialog")
+            furnitureDialog.show(supportFragmentManager, "Dialog")
         }
 
         delete_fab.setOnClickListener {
@@ -87,6 +90,12 @@ class MainActivity : AppCompatActivity() {
 
         capture_fab.setOnClickListener {
             takePhoto()
+        }
+    }
+
+    internal fun selectColor(uri: Uri) {
+        ColorFragment.newInstance(uri.toString()).apply {
+            show(supportFragmentManager, "ColorDialog")
         }
     }
 
