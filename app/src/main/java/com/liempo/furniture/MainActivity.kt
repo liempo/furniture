@@ -29,8 +29,6 @@ class MainActivity : AppCompatActivity() {
     private var model: ModelRenderable? = null
     private var selected: AnchorNode? = null
 
-    // Dialogs
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -77,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             show(supportFragmentManager, "FurnitureDialog") }
 
         select_fab.setOnClickListener {
-            furnitureDialog.show(supportFragmentManager, "Dialog")
+            furnitureDialog.show(supportFragmentManager, "FurnitureDialog")
         }
 
         delete_fab.setOnClickListener {
